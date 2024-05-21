@@ -1,1 +1,1 @@
-# TCC---DLTS-para-clique-m-xima
+# TCC---DLTS-para-clique-maxima
