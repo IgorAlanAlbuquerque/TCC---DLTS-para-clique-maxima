@@ -100,17 +100,11 @@ def process_graph_and_clique(graph_filepath, clique, output_filepath):
 def p_process_graph_and_clique(graph_filepath, clique_filepath, output_dir):
     """Cria múltiplas ramificações para a mesma clique e processa cada variação."""
     clique = read_clique(clique_filepath)
-    num_variations = math.ceil(clique_size / 3)
     
     # Processar a clique na ordem original
-    output_filepath = os.path.join(output_dir, f"{os.path.basename(clique_filepath).replace('.dimacs', '_0.dimacs')}")
+    output_filepath = os.path.join(output_dir, f"{os.path.basename(clique_filepath)}")
     process_graph_and_clique(graph_filepath, clique, output_filepath)
     
-    # Processar as variações embaralhadas
-    for i in range(1, num_variations):
-        random.shuffle(clique)
-        output_filepath = os.path.join(output_dir, f"{os.path.basename(clique_filepath).replace('.dimacs', f'_var{i}.dimacs')}")
-        process_graph_and_clique(graph_filepath, clique, output_filepath)
 
 graphs_dir = 'graphs'
 cliques_dir = 'cliques'

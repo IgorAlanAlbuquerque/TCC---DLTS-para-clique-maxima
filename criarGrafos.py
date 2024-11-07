@@ -33,7 +33,7 @@ def generate_and_save_graphs_in_batches(num_graph, num_node_min, num_node_max, p
         print(f"{batch_end} grafos gerados e salvos...")
 
 # Parâmetros para gerar os grafos
-num_graph = 5000
+num_graph = 50000
 num_node_min = 30
 num_node_max = 250
 prob_min = 0.3
