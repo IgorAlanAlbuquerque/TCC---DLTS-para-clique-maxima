@@ -24,9 +24,12 @@ def read_clique(filepath):
     with open(filepath, 'r') as file:
         for line in file:
             if '[' in line and ']' in line:
-                clique_part = line.strip().split('[')[0].strip()
-                clique = clique_part.split()
-                clique = [int(node) - 1 for node in clique]  # Converter para índice baseado em 0
+                # Faz o split usando 'm' e pega a parte após 'm'
+                clique_part = line.split('m', 1)[1].strip()
+                # Pega tudo antes do '[' para obter somente os números da clique
+                clique_part = clique_part.split('[')[0].strip()
+                clique = clique_part.split()  # Divide a string em uma lista de números
+                clique = [int(node) - 1 for node in clique]  # Converte para índices baseados em 0
                 return clique
 
 
@@ -97,12 +100,11 @@ def process_graph_and_clique(graph_filepath, clique, output_filepath):
             file.write("AA cliqueatual " + " ".join(map(str, current_clique)) + "\n")
 
 
-def p_process_graph_and_clique(graph_filepath, clique_filepath, output_dir):
+def p_process_graph_and_clique(graph_filepath, clique_filepath, output_filepath):
     """Cria múltiplas ramificações para a mesma clique e processa cada variação."""
     clique = read_clique(clique_filepath)
     
     # Processar a clique na ordem original
-    output_filepath = os.path.join(output_dir, f"{os.path.basename(clique_filepath)}")
     process_graph_and_clique(graph_filepath, clique, output_filepath)
     
 

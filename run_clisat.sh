@@ -23,7 +23,7 @@ for filepath in $input_dir/*.dimacs; do
     echo "Processando arquivo: $filepath"
 
     # Executar o CliSAT
-    $clisat_bin "$filepath" $time_limit $ordering > "$output_path"
+    $clisat_bin "$filepath" $time_limit $ordering 1 > "$output_path"
     
     if [ $? -eq 0 ]; then
         echo "Arquivo processado com sucesso: $filepath"

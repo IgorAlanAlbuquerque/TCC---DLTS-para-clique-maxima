@@ -3,3 +3,4 @@ tensorflow[and-cuda]==2.17.0
 numpy
 h5py
 networkx
+scipy
