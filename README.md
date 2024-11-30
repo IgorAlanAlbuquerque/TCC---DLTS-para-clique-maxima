@@ -17,4 +17,6 @@ O arquivo treinarModelos.ipynb contém o código para gerar os modelos. Esse có
 
 Os grafos especificos usados para o treino podem ser encontrados em https://drive.google.com/drive/folders/1IThdxR3MoQTL_URcS41trmpAIAQuLuLv?usp=sharing
 
-Os modelos pré-treinados e usados no testes podem ser encontrados na pasta modelos
+Os modelos pré-treinados e usados no testes podem ser encontrados em https://drive.google.com/drive/folders/1uKRZ8LJlOg_74K2MNG8Wt0Q8kAMksyhG?usp=sharing
+
+O arquivo testarModelos.ipynb contem a implementação do algoritmo de branch and bound usando a rede neural, bem como a comparação com os outros algoritmos usandos para a comparação nesse estudo.
