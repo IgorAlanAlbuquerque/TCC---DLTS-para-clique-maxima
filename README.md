@@ -9,8 +9,7 @@ Arquivo run_clisat.sh é um script shell que executa um solucionador sat que ret
 
 É necessario o arquivo o executavel CliSAT na pasta bin do repositorio https://github.com/psanse/CliSAT
 
-Coloque o executavel na mesma hierarquia que o script sh. O arquivo executavel deve ser renomeado apenas para CliSAT.
-Lembrando que o script foi escrito para a versão atual do CliSAT no repositório. Caso haja alterações nos parametros do CliSAT em versões futuras será necessário atualizar o script.
+Eu decidi incluir o executável nesse repositório. Se o dono original quiser que eu remova então por favor entre em contato.
 
 O arquivo criarInstancias então utiliza os grafos e as cliques maximas para criar as instancias de treino que serao usadas para alimentar o modelo de machine learn. As instancias de treino ficam salvas na pasta train_graphs.
 
