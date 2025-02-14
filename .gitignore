@@ -2,3 +2,4 @@ graphs/
 cliques/
 CliSAT
 train_graphs/
+modelos/checkpoints/*
