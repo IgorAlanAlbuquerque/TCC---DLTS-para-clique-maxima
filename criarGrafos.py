@@ -33,25 +33,22 @@ def write_dimacs(graph, filepath):
             f.write(f"e {u+1} {v+1}\n")
 
 
-def generate_and_save_graphs_in_batches(num_graph, num_node_min, num_node_max,
-                                        prob_min, prob_max, batch_size,
-                                        directory):
+def generate_and_save_graphs_in_batches(num_graph, num_node_min, num_node_max, prob_min, prob_max, batch_size, directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
     for batch_start in range(0, num_graph, batch_size):
         batch_end = min(batch_start + batch_size, num_graph)
         for i in range(batch_start, batch_end):
-            graph = generate_random_graph(num_node_min, num_node_max, prob_min,
-                                          prob_max)
+            graph = generate_random_graph(num_node_min, num_node_max, prob_min, prob_max)
             filepath = os.path.join(directory, f"graph_{i + 1}.dimacs")
             write_dimacs(graph, filepath)
         print(f"{batch_end} grafos gerados e salvos...")
 
 
 # Parâmetros para gerar os grafos
-num_graph = 25000
-num_node_min = 15
+num_graph = 50000
+num_node_min = 20
 num_node_max = 30
 prob_min = 0.3
 prob_max = 0.8
@@ -59,7 +56,6 @@ batch_size = 100  # Ajuste o tamanho do lote conforme necessário
 
 # Gerar e salvar grafos em lotes
 print("Gerando e salvando grafos em lotes...")
-generate_and_save_graphs_in_batches(num_graph, num_node_min, num_node_max,
-                                    prob_min, prob_max, batch_size, "graphs")
+generate_and_save_graphs_in_batches(num_graph, num_node_min, num_node_max, prob_min, prob_max, batch_size, "graphs")
 
 print("Processo concluído.")

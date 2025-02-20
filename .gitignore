@@ -1,4 +1,4 @@
 graphs/
 cliques/
 train_graphs/
-modelos/checkpoints/*
+modelos/
