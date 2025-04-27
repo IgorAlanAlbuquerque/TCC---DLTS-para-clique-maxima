@@ -5,3 +5,5 @@ h5py
 networkx
 scipy
 scikit-learn
+matplotlib
+seaborn
